@@ -18,15 +18,15 @@ namespace SeleniumTesting
             //navigating to your preferred site
             driver.Navigate().GoToUrl("https://www.google.com");
             Console.WriteLine("Opened the browser and went to Google.");
-        }
-
-        [Test]
-        public void TestBrowser()
-        {
             //clicking the "agree" on the pop-up window
             IWebElement element = driver.FindElement(By.Id("L2AGLb"));
             element.Click();
             Console.WriteLine("Accepted the pop-up window for security.");
+        }
+
+        [Test,Category("FirstSearch")]
+        public void TestBrowser()
+        {
 
             //sending keys to the search bar
             IWebElement element2 = driver.FindElement(By.Name("q"));
@@ -42,6 +42,16 @@ namespace SeleniumTesting
             IWebElement element4 = driver.FindElement(By.XPath("//tp-yt-paper-button[@id='button']//*[text()='I Agree']"));
             element4.Click();
 
+        }
+
+        [Test,Category("SecondSearch")]
+        public void TestBrowserTwo()
+        {
+            //sending keys to the search bar
+            IWebElement element5 = driver.FindElement(By.Name("q"));
+            element5.SendKeys("Google galaxy");
+            Console.WriteLine("Searched out...");
+            element5.SendKeys(Keys.Enter);
         }
 
         [TearDown]
