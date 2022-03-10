@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using NUnit.Framework;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using System;
 using System.Threading;
@@ -7,25 +8,49 @@ namespace SeleniumTesting
 {
     class Program
     {
-        static void Main(string[] args)
+        //creating a reference for our browser
+        IWebDriver driver = new ChromeDriver();
+
+
+        [SetUp]
+        public void BrowserCheckup()
         {
-            //creating a reference for our browser
-            IWebDriver driver = new ChromeDriver();
             //navigating to your preferred site
             driver.Navigate().GoToUrl("https://www.google.com");
+            Console.WriteLine("Opened the browser and went to Google.");
+        }
+
+        [Test]
+        public void TestBrowser()
+        {
             //clicking the "agree" on the pop-up window
             IWebElement element = driver.FindElement(By.Id("L2AGLb"));
             element.Click();
+            Console.WriteLine("Accepted the pop-up window for security.");
+
             //sending keys to the search bar
             IWebElement element2 = driver.FindElement(By.Name("q"));
             element2.SendKeys("do a barrel roll");
+            Console.WriteLine("Searched out...");
+
             //clicking "Enter" to start the search
             element2.SendKeys(Keys.Enter);
+            Thread.Sleep(5000);
+            IWebElement element3 = driver.FindElement(By.ClassName("twQ0Be"));
+            element3.Click();
+            Thread.Sleep(5000);
+            IWebElement element4 = driver.FindElement(By.XPath("//*[@id='content']/div[2]/div[5]/div[2]/ytd-button-renderer[2]/a"));
+            element4.Click();
+
+        }
+
+        [TearDown]
+        public void BrowserCleanup()
+        {
             //waiting and closing the browser
             Thread.Sleep(5000);
             driver.Close();
-
-
+            Console.WriteLine("Closed the program!");
         }
     }
 }
