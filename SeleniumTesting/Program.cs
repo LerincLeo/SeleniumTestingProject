@@ -39,7 +39,7 @@ namespace SeleniumTesting
             IWebElement element3 = driver.FindElement(By.ClassName("twQ0Be"));
             element3.Click();
             Thread.Sleep(5000);
-            IWebElement element4 = driver.FindElement(By.XPath("//*[@id='content']/div[2]/div[5]/div[2]/ytd-button-renderer[2]/a"));
+            IWebElement element4 = driver.FindElement(By.XPath("//tp-yt-paper-button[@id='button']//*[text()='I Agree']"));
             element4.Click();
 
         }
@@ -50,7 +50,7 @@ namespace SeleniumTesting
             //waiting and closing the browser
             Thread.Sleep(5000);
             driver.Close();
-            Console.WriteLine("Closed the program!");
+            Console.WriteLine("Closed the program!");           
         }
     }
 }
