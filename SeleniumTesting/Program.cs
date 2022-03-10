@@ -19,6 +19,7 @@ namespace SeleniumTesting
             //sending keys to the search bar
             IWebElement element2 = driver.FindElement(By.Name("q"));
             element2.SendKeys("do a barrel roll");
+            //clicking "Enter" to start the search
             element2.SendKeys(Keys.Enter);
             //waiting and closing the browser
             Thread.Sleep(5000);
