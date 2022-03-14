@@ -11,7 +11,6 @@ namespace SeleniumTesting
         //creating a reference for our browser
         IWebDriver driver = new ChromeDriver();
 
-
         [SetUp]
         public void BrowserCheckup()
         {
@@ -23,7 +22,6 @@ namespace SeleniumTesting
             element.Click();
             Console.WriteLine("Accepted the pop-up window for security.");
         }
-
         [Test,Category("FirstSearch")]
         public void TestBrowser()
         {
@@ -36,24 +34,14 @@ namespace SeleniumTesting
             //clicking "Enter" to start the search
             element2.SendKeys(Keys.Enter);
             Thread.Sleep(5000);
+            //click on the video on search results
             IWebElement element3 = driver.FindElement(By.ClassName("twQ0Be"));
             element3.Click();
             Thread.Sleep(5000);
+            //accept the agreedment
             IWebElement element4 = driver.FindElement(By.XPath("//tp-yt-paper-button[@id='button']//*[text()='I Agree']"));
             element4.Click();
-
-        }
-
-        [Test,Category("SecondSearch")]
-        public void TestBrowserTwo()
-        {
-            //sending keys to the search bar
-            IWebElement element5 = driver.FindElement(By.Name("q"));
-            element5.SendKeys("Google galaxy");
-            Console.WriteLine("Searched out...");
-            element5.SendKeys(Keys.Enter);
-        }
-
+        }       
         [TearDown]
         public void BrowserCleanup()
         {
