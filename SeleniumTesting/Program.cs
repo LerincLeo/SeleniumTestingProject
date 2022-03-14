@@ -38,7 +38,7 @@ namespace SeleniumTesting
             IWebElement element3 = driver.FindElement(By.ClassName("twQ0Be"));
             element3.Click();
             Thread.Sleep(5000);
-            //accept the agreedment
+            //accept the agreement
             IWebElement element4 = driver.FindElement(By.XPath("//tp-yt-paper-button[@id='button']//*[text()='I Agree']"));
             element4.Click();
         }       
