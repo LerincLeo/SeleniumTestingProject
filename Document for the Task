@@ -1,0 +1,15 @@
+Rad u Seleniumu (C#)- Na početku bilo je tu izazova jer sam morao tražiti zašto NUnit testing nije radio, gdje sam otkrio da je bilo potrebno dodati "Microsoft.NET.Test.Sdk" paket.
+Bilo je lako shvatiti osnove Seleniuma i način na koji radi. Bilo je malo teže naučiti XPath za neke od stranica na kojima je bilo teško naći odgovarajući button, text i slično.
+Bilo je zabavno tražiti, učiti i gledati kako raditi. Na prvo kada prvi projkt proradi bez greške i otvori sve, pokaže na testu da je sve prošlo bez problema stavi osmjeh na lice.
+
+Kako program radi:
+  1. odlazi na google.com
+  2. prihvaća iskočni prozor za sigurnost
+  3. u tražilicu upisuje "do a barrel roll"
+  4. prikazuje nam search rezultate
+  5. otvara youtube videozapis i prebacuje nas na youtube.com
+  6. prihvaća iskočni prozor zaštite i sigurnosti na youtube-u
+  7. prikazuje videozapis
+  8. projekt se zatvara
+  
+  Cijela dokumentacija ovoga zadatka biti će opisana u wordu HR/EN.
